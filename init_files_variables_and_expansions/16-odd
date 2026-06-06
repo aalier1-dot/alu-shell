@@ -1,2 +1,5 @@
 #!/bin/bash
-awk "NR
+while read line; do
+    echo "$line"
+    read line
+done
