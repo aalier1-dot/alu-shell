@@ -1,6 +1,2 @@
 #!/bin/bash
-while read l
-do
-echo "$l"
-read l
-done
+while read l; do echo "$l"; read l; done
