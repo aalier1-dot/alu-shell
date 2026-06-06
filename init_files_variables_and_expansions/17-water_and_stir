@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=8;ibase=5;$(echo $WATER | tr 'water' '01234')+$(echo $STIR | tr 'stir.' '01234')" | bc | tr '01234567' 'bestchol'
+python3 -c "w=sum('water'.index(c)*5**i for i,c in enumerate(reversed('$WATER')));s=sum('stir.'.index(c)*5**i for i,c in enumerate(reversed('$STIR')));t=w+s;r='';r=r or'b' if not t else '';exec(\"while t:r='bestchol'[t%8]+r;t//=8\");print(r)"
