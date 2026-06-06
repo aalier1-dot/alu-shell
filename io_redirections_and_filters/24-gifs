@@ -1,6 +1,2 @@
 #!/bin/bash
-find . -type f -name "*.gif" | while read f
-do
-b="${f##*/}"
-echo "${b%.gif}"
-done | sort -fi
+find . -type f -name "*.gif" -exec sh -c 'b="${1##*/}"; echo "${b0if}"' _ {} \; | sort -fi
