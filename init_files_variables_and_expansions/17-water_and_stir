@@ -1,15 +1,2 @@
 #!/bin/bash
-python3 -c "
-w=0
-for c in '$WATER':
-    w=w*5+'water'.index(c)
-s=0
-for c in '$STIR':
-    s=s*5+'stir.'.index(c)
-t=w+s
-r=''
-while t:
-    r='bestchol'[t%8]+r
-    t//=8
-print(r)
-"
+echo "obase=8;ibase=5;$(echo $WATER | tr 'water' '01234')+$(echo $STIR | tr 'stir.' '01234')" | bc | tr '01234567' 'bestchol'
